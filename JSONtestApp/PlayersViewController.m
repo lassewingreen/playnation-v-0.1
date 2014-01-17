@@ -78,7 +78,7 @@
                                                                        }
                                                                        
                                                                        else {
-                                                                           NSLog(@"jsonList: %@", playerJsonWrapper);
+                                                                           NSLog(@"PlayerJsonList: %@", playerJsonWrapper);
                                                                            
                                                                            [PlayersTableView reloadData];
                                                                            
