@@ -40,8 +40,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Sbo-z2-oIe"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oWo-7B-Ua3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="NewsTableView" destination="o8u-f0-geD" id="5bP-02-z9r"/>
+                        <outlet property="refreshTheNewsDragDown" destination="oWo-7B-Ua3" id="kgk-9s-MUk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJx-CO-KsU" userLabel="First Responder" sceneMemberID="firstResponder"/>

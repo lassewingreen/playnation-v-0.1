@@ -11,6 +11,7 @@
 @interface NewsViewController : UITableViewController <UITableViewDataSource> {
     
     
+    __weak IBOutlet UIRefreshControl *refreshTheNewsDragDown;
     
 
     IBOutlet UITableView *NewsTableView;

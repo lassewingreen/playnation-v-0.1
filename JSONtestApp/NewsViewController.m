@@ -45,9 +45,12 @@
         [urlRequest setHTTPMethod:@"POST"];
         [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
+        
+        
         NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:urlRequest
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                                
+                                                                                                                              
                                                                NSLog(@"Response:%@ %@\n", response, error);
                                                                
                                                                
@@ -88,6 +91,9 @@
                                                               
                                                            }];
         [dataTask resume];
+    
+            
+        
         
     }
     
