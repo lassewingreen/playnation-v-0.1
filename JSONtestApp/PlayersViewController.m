@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Agro52 Aps. All rights reserved.
 //
 
-#import "PlayerViewController.h"
+#import "PlayersViewController.h"
 #import "NSString+StripHTMLwithRegEX.h"
 
-@interface PlayerViewController ()
+@interface PlayersViewController ()
 
 @end
 
-@implementation PlayerViewController
-@synthesize PlayerTableView;
+@implementation PlayersViewController
+@synthesize PlayersTableView;
 @synthesize playerJsonWrapper;
 @synthesize playerTableArray;
 
@@ -80,7 +80,7 @@
                                                                        else {
                                                                            NSLog(@"jsonList: %@", playerJsonWrapper);
                                                                            
-                                                                           [PlayerTableView reloadData];
+                                                                           [PlayersTableView reloadData];
                                                                            
                                                                            playerTableArray = playerJsonWrapper;
                                                                            
@@ -117,10 +117,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playersCell"];
     
     if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"playerCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"playersCell"];
     }
     
     cell.textLabel.text = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"LastName"];

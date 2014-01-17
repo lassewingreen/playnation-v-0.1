@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerViewController : UITableViewController
+@interface PlayersViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *PlayerTableView;
+@property (strong, nonatomic) IBOutlet UITableView *PlayersTableView;
 
 @property (strong,nonatomic) NSArray *playerJsonWrapper;
 @property (strong,nonatomic) NSArray *playerTableArray;

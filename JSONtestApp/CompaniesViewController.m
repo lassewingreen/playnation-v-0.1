@@ -1,21 +1,21 @@
 //
-//  NewsViewController.m
+//  CompaniesViewController.m
 //  JSONtestApp
 //
-//  Created by Lasse Wingreen on 02/01/14.
+//  Created by Remus Cicu on 17/01/14.
 //  Copyright (c) 2014 Agro52 Aps. All rights reserved.
 //
 
-#import "NewsViewController.h"
-
+#import "CompaniesViewController.h"
 #import "NSString+StripHTMLwithRegEX.h"
 
-@interface NewsViewController ()
-
+@interface CompaniesViewController ()
 
 @end
 
-@implementation NewsViewController
+@implementation CompaniesViewController
+
+@synthesize companiesTableArray, companiesJsonWrapper, CompaniesTableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,10 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"News";
 
+    self.title = @"Companies";
     
-  //  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    //  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     
     {
@@ -41,15 +42,12 @@
         
         NSURL * url = [NSURL URLWithString:@"http://playnation.eu/beta/hacks/getItem.php"];
         NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
-        NSString * params =@"tableName=news";
+        NSString * params =@"tableName=companies";
         [urlRequest setHTTPMethod:@"POST"];
         [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
-        
-        
         NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:urlRequest
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                               
                                                                
                                                                NSLog(@"Response:%@ %@\n", response, error);
                                                                
@@ -57,57 +55,44 @@
                                                                if(error == nil)
                                                                {
                                                                    NSString * text = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-                                                                   //NSLog(@"Data = %@",text);
-                                                               
+                                                                   NSLog(@"Data = %@",text);
+                                                                   
                                                                    
                                                                    NSString* mystring = text;
                                                                    NSString* stripped = [mystring stripHTMLwithRegEX];
                                                                    
-//                                                                   NSLog(@"Stripped Data = %@",stripped);
+                                                                   NSLog(@"Stripped Data = %@",stripped);
                                                                    
                                                                    NSData* strippedJsonData = [stripped dataUsingEncoding:NSUTF8StringEncoding];
                                                                    
                                                                    
                                                                    NSError *jsonNewsError = nil;
                                                                    
-                                                                   newsJsonWrapper = [NSJSONSerialization
-                                                                                         JSONObjectWithData:strippedJsonData
-                                                                                         options:NSJSONReadingAllowFragments
-                                                                                         error:&jsonNewsError];
+                                                                   companiesJsonWrapper = [NSJSONSerialization
+                                                                                       JSONObjectWithData:strippedJsonData
+                                                                                       options:NSJSONReadingAllowFragments
+                                                                                       error:&jsonNewsError];
                                                                    
-                                                                   if (!newsJsonWrapper) {
-                                                                            NSLog(@"Error parsing JSON: %@", jsonNewsError);
+                                                                   if (!companiesJsonWrapper) {
+                                                                       NSLog(@"Error parsing JSON: %@", jsonNewsError);
                                                                    }
                                                                    
                                                                    else {
-                                                                       NSLog(@"jsonList: %@", newsJsonWrapper);
-                                                                
-                                                                       [NewsTableView reloadData];
+                                                                       NSLog(@"jsonList: %@", companiesJsonWrapper);
                                                                        
-                                                                   newsTableArray = newsJsonWrapper;
+                                                                       [CompaniesTableView reloadData];
+                                                                       
+                                                                       companiesTableArray = companiesJsonWrapper;
                                                                        
                                                                    }
-                                                                }
-                                                              
+                                                               }
+                                                               
                                                            }];
         [dataTask resume];
-    
-            
-        
         
     }
-    
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -119,31 +104,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return [newsJsonWrapper count];
+#    // Return the number of rows in the section.
+    return [companiesJsonWrapper count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"companiesCell"];
     
     if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"newsCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"companiesCell"];
     }
     
-    cell.textLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"Headline"];
-    cell.detailTextLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
+    cell.textLabel.text = [[companiesTableArray objectAtIndex:indexPath.row] objectForKey:@"CompanyName"];
+    cell.detailTextLabel.text = [[companiesTableArray objectAtIndex:indexPath.row] objectForKey:@"CompanyType"];
     
     return cell;
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

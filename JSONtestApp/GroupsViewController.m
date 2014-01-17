@@ -1,21 +1,21 @@
 //
-//  NewsViewController.m
+//  GroupViewController.m
 //  JSONtestApp
 //
-//  Created by Lasse Wingreen on 02/01/14.
+//  Created by Remus Cicu on 17/01/14.
 //  Copyright (c) 2014 Agro52 Aps. All rights reserved.
 //
 
-#import "NewsViewController.h"
-
+#import "GroupsViewController.h"
 #import "NSString+StripHTMLwithRegEX.h"
 
-@interface NewsViewController ()
-
+@interface GroupsViewController ()
 
 @end
 
-@implementation NewsViewController
+@implementation GroupsViewController
+
+@synthesize GroupsTableView, groupJsonWrapper, groupTableArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,27 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"News";
-
     
-  //  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    
+    self.title = @"Groups";
     {
         NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
         
         NSURL * url = [NSURL URLWithString:@"http://playnation.eu/beta/hacks/getItem.php"];
         NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
-        NSString * params =@"tableName=news";
+        NSString * params =@"tableName=groups";
         [urlRequest setHTTPMethod:@"POST"];
         [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
         
-        
-        
         NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:urlRequest
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                               
                                                                
                                                                NSLog(@"Response:%@ %@\n", response, error);
                                                                
@@ -57,57 +50,43 @@
                                                                if(error == nil)
                                                                {
                                                                    NSString * text = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-                                                                   //NSLog(@"Data = %@",text);
-                                                               
+                                                                   NSLog(@"Data = %@",text);
+                                                                   
                                                                    
                                                                    NSString* mystring = text;
                                                                    NSString* stripped = [mystring stripHTMLwithRegEX];
                                                                    
-//                                                                   NSLog(@"Stripped Data = %@",stripped);
+                                                                   NSLog(@"Stripped Data = %@",stripped);
                                                                    
                                                                    NSData* strippedJsonData = [stripped dataUsingEncoding:NSUTF8StringEncoding];
                                                                    
                                                                    
                                                                    NSError *jsonNewsError = nil;
                                                                    
-                                                                   newsJsonWrapper = [NSJSONSerialization
-                                                                                         JSONObjectWithData:strippedJsonData
-                                                                                         options:NSJSONReadingAllowFragments
-                                                                                         error:&jsonNewsError];
+                                                                   groupJsonWrapper = [NSJSONSerialization
+                                                                                           JSONObjectWithData:strippedJsonData
+                                                                                           options:NSJSONReadingAllowFragments
+                                                                                           error:&jsonNewsError];
                                                                    
-                                                                   if (!newsJsonWrapper) {
-                                                                            NSLog(@"Error parsing JSON: %@", jsonNewsError);
+                                                                   if (!groupJsonWrapper) {
+                                                                       NSLog(@"Error parsing JSON: %@", jsonNewsError);
                                                                    }
                                                                    
                                                                    else {
-                                                                       NSLog(@"jsonList: %@", newsJsonWrapper);
-                                                                
-                                                                       [NewsTableView reloadData];
+                                                                       NSLog(@"jsonList: %@", groupJsonWrapper);
                                                                        
-                                                                   newsTableArray = newsJsonWrapper;
+                                                                       [GroupsTableView reloadData];
+                                                                       
+                                                                       groupTableArray = groupJsonWrapper;
                                                                        
                                                                    }
-                                                                }
-                                                              
+                                                               }
+                                                               
                                                            }];
         [dataTask resume];
-    
-            
-        
         
     }
-    
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -119,31 +98,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return [newsJsonWrapper count];
+#    // Return the number of rows in the section.
+    return [groupJsonWrapper count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupsCell"];
     
     if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"newsCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"groupsCell"];
     }
     
-    cell.textLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"Headline"];
-    cell.detailTextLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
+    cell.textLabel.text = [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupName"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ ",[[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupType1"], [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupType2"] ];
     
     return cell;
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
