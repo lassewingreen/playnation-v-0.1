@@ -50,7 +50,7 @@
         NSURLSessionDataTask * dataTask =[defaultSession dataTaskWithRequest:urlRequest
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                                
-                                                                                                                              
+                                                               
                                                                NSLog(@"Response:%@ %@\n", response, error);
                                                                
                                                                
@@ -131,11 +131,6 @@
     return [newsJsonWrapper count];
 }
 
-NSString *_getString(id obj)
-{
-    return [obj isKindOfClass:[NSString class]] ? obj : nil;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
@@ -144,8 +139,8 @@ NSString *_getString(id obj)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MainCell"];
     }
     
-    cell.textLabel.text = _getString([[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"Headline"]);
-    cell.detailTextLabel.text = _getString([[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"DisplayName"]);
+    cell.textLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"Headline"];
+    cell.detailTextLabel.text = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
     
     return cell;
 }
