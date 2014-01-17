@@ -80,7 +80,7 @@
                                                                    }
                                                                    
                                                                    else {
-                                                                       NSLog(@"jsonList: %@", newsJsonWrapper);
+                                                                       NSLog(@"NewsJsonList: %@", newsJsonWrapper);
                                                                 
                                                                        [NewsTableView reloadData];
                                                                        
