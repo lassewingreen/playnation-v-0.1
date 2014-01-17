@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60390722188955530080AD45 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60390721188955530080AD45 /* PlayerViewController.m */; };
 		AA085F821887D96900F300EC /* NSString+StripHTMLwithRegEX.m in Sources */ = {isa = PBXBuildFile; fileRef = AA085F811887D96900F300EC /* NSString+StripHTMLwithRegEX.m */; };
 		AA23FB3718759C4900241E2F /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA23FB3618759C4900241E2F /* NewsViewController.m */; };
 		AAE728AA1873091E0038220C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE728A91873091E0038220C /* Foundation.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		29A517A2206B48C4B738D4D0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5A8025EE22D7424BBC2EF538 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		60390720188955530080AD45 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		60390721188955530080AD45 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		AA085F801887D96900F300EC /* NSString+StripHTMLwithRegEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StripHTMLwithRegEX.h"; sourceTree = "<group>"; };
 		AA085F811887D96900F300EC /* NSString+StripHTMLwithRegEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StripHTMLwithRegEX.m"; sourceTree = "<group>"; };
 		AA23FB3518759C4900241E2F /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				AAE728B81873091F0038220C /* AppDelegate.h */,
 				AAE728B91873091F0038220C /* AppDelegate.m */,
 				AAE728BB1873091F0038220C /* Main.storyboard */,
+				60390720188955530080AD45 /* PlayerViewController.h */,
+				60390721188955530080AD45 /* PlayerViewController.m */,
 				AA23FB3518759C4900241E2F /* NewsViewController.h */,
 				AA23FB3618759C4900241E2F /* NewsViewController.m */,
 				AA085F801887D96900F300EC /* NSString+StripHTMLwithRegEX.h */,
@@ -299,6 +304,7 @@
 				AAE728BA1873091F0038220C /* AppDelegate.m in Sources */,
 				AAE728B61873091F0038220C /* main.m in Sources */,
 				AA085F821887D96900F300EC /* NSString+StripHTMLwithRegEX.m in Sources */,
+				60390722188955530080AD45 /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
