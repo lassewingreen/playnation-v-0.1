@@ -7,7 +7,7 @@
 //
 
 #import "NewsViewController.h"
-
+#import "NewsDetailedViewController.h"
 #import "NSString+StripHTMLwithRegEX.h"
 
 @interface NewsViewController ()
@@ -183,16 +183,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showNewsDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NewsViewController *newsDestViewController = segue.destinationViewController;
+        newsDestViewController.headline = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"Headline"];
+        newsDestViewController.newsText = [[newsTableArray objectAtIndex:indexPath.row] objectForKey:@"NewsText"];
+        
+    }
 }
 
- */
 
 @end

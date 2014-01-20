@@ -25,6 +25,10 @@
     
 
 }
+
+@property (weak, nonatomic)NSString *headline;
+@property (weak, nonatomic)NSString *newsText;
+
 @end
 
 

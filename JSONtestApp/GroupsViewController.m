@@ -161,16 +161,24 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showGroupsDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        GroupsViewController *groupsDestViewController = segue.destinationViewController;
+        groupsDestViewController.groupName =  [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupName"];
+        groupsDestViewController.groupType =  [NSString stringWithFormat:@"%@ - %@ ",[[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupType1"], [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupType2"] ];
+        groupsDestViewController.groupCreatedBy = [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"DisplayName"];
+        groupsDestViewController.groupMembers = [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"MemberCount"];
+        groupsDestViewController.dateCreated = [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"CreatedTime"];
+        groupsDestViewController.groupDesciption = [[groupTableArray objectAtIndex:indexPath.row] objectForKey:@"GroupDesc"];
+    }
 }
 
- */
+
 
 @end

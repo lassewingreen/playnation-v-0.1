@@ -11,6 +11,12 @@
 		6039072518895A030080AD45 /* GamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039072418895A030080AD45 /* GamesViewController.m */; };
 		6039072818895F460080AD45 /* CompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039072718895F460080AD45 /* CompaniesViewController.m */; };
 		6039072B18896DF80080AD45 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039072A18896DF80080AD45 /* GroupsViewController.m */; };
+		603907331889EBB80080AD45 /* NewsDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603907321889EBB80080AD45 /* NewsDetailedViewController.m */; };
+		60390736188D14170080AD45 /* UITabBarController+ShowHideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60390735188D14170080AD45 /* UITabBarController+ShowHideBar.m */; };
+		60390739188D23710080AD45 /* GamesDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60390738188D23710080AD45 /* GamesDetailedViewController.m */; };
+		6039073C188D32B90080AD45 /* PlayersDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039073B188D32B90080AD45 /* PlayersDetailedViewController.m */; };
+		6039073F188D38810080AD45 /* GroupsDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6039073E188D38810080AD45 /* GroupsDetailedViewController.m */; };
+		60390742188D38A40080AD45 /* CompaniesDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60390741188D38A40080AD45 /* CompaniesDetailedViewController.m */; };
 		AA085F821887D96900F300EC /* NSString+StripHTMLwithRegEX.m in Sources */ = {isa = PBXBuildFile; fileRef = AA085F811887D96900F300EC /* NSString+StripHTMLwithRegEX.m */; };
 		AA23FB3718759C4900241E2F /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA23FB3618759C4900241E2F /* NewsViewController.m */; };
 		AAE728AA1873091E0038220C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE728A91873091E0038220C /* Foundation.framework */; };
@@ -50,6 +56,18 @@
 		6039072718895F460080AD45 /* CompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesViewController.m; sourceTree = "<group>"; };
 		6039072918896DF80080AD45 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
 		6039072A18896DF80080AD45 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		603907311889EBB80080AD45 /* NewsDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailedViewController.h; sourceTree = "<group>"; };
+		603907321889EBB80080AD45 /* NewsDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailedViewController.m; sourceTree = "<group>"; };
+		60390734188D14170080AD45 /* UITabBarController+ShowHideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ShowHideBar.h"; sourceTree = "<group>"; };
+		60390735188D14170080AD45 /* UITabBarController+ShowHideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ShowHideBar.m"; sourceTree = "<group>"; };
+		60390737188D23710080AD45 /* GamesDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesDetailedViewController.h; sourceTree = "<group>"; };
+		60390738188D23710080AD45 /* GamesDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesDetailedViewController.m; sourceTree = "<group>"; };
+		6039073A188D32B90080AD45 /* PlayersDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersDetailedViewController.h; sourceTree = "<group>"; };
+		6039073B188D32B90080AD45 /* PlayersDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersDetailedViewController.m; sourceTree = "<group>"; };
+		6039073D188D38810080AD45 /* GroupsDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsDetailedViewController.h; sourceTree = "<group>"; };
+		6039073E188D38810080AD45 /* GroupsDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsDetailedViewController.m; sourceTree = "<group>"; };
+		60390740188D38A40080AD45 /* CompaniesDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesDetailedViewController.h; sourceTree = "<group>"; };
+		60390741188D38A40080AD45 /* CompaniesDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesDetailedViewController.m; sourceTree = "<group>"; };
 		AA085F801887D96900F300EC /* NSString+StripHTMLwithRegEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StripHTMLwithRegEX.h"; sourceTree = "<group>"; };
 		AA085F811887D96900F300EC /* NSString+StripHTMLwithRegEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StripHTMLwithRegEX.m"; sourceTree = "<group>"; };
 		AA23FB3518759C4900241E2F /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -98,6 +116,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6039072C1889EB540080AD45 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				AA23FB3518759C4900241E2F /* NewsViewController.h */,
+				AA23FB3618759C4900241E2F /* NewsViewController.m */,
+				603907311889EBB80080AD45 /* NewsDetailedViewController.h */,
+				603907321889EBB80080AD45 /* NewsDetailedViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		6039072D1889EB5D0080AD45 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				6039072318895A030080AD45 /* GamesViewController.h */,
+				6039072418895A030080AD45 /* GamesViewController.m */,
+				60390737188D23710080AD45 /* GamesDetailedViewController.h */,
+				60390738188D23710080AD45 /* GamesDetailedViewController.m */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		6039072E1889EB6F0080AD45 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				60390721188955530080AD45 /* PlayersViewController.m */,
+				60390720188955530080AD45 /* PlayersViewController.h */,
+				6039073A188D32B90080AD45 /* PlayersDetailedViewController.h */,
+				6039073B188D32B90080AD45 /* PlayersDetailedViewController.m */,
+			);
+			name = Players;
+			sourceTree = "<group>";
+		};
+		6039072F1889EB830080AD45 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				6039072A18896DF80080AD45 /* GroupsViewController.m */,
+				6039072918896DF80080AD45 /* GroupsViewController.h */,
+				6039073D188D38810080AD45 /* GroupsDetailedViewController.h */,
+				6039073E188D38810080AD45 /* GroupsDetailedViewController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		603907301889EB900080AD45 /* Companies */ = {
+			isa = PBXGroup;
+			children = (
+				6039072618895F460080AD45 /* CompaniesViewController.h */,
+				6039072718895F460080AD45 /* CompaniesViewController.m */,
+				60390740188D38A40080AD45 /* CompaniesDetailedViewController.h */,
+				60390741188D38A40080AD45 /* CompaniesDetailedViewController.m */,
+			);
+			name = Companies;
+			sourceTree = "<group>";
+		};
 		AAE7289D1873091E0038220C = {
 			isa = PBXGroup;
 			children = (
@@ -136,20 +209,17 @@
 				AAE728B81873091F0038220C /* AppDelegate.h */,
 				AAE728B91873091F0038220C /* AppDelegate.m */,
 				AAE728BB1873091F0038220C /* Main.storyboard */,
-				6039072318895A030080AD45 /* GamesViewController.h */,
-				6039072418895A030080AD45 /* GamesViewController.m */,
-				6039072618895F460080AD45 /* CompaniesViewController.h */,
-				6039072718895F460080AD45 /* CompaniesViewController.m */,
-				6039072918896DF80080AD45 /* GroupsViewController.h */,
-				6039072A18896DF80080AD45 /* GroupsViewController.m */,
-				60390720188955530080AD45 /* PlayersViewController.h */,
-				60390721188955530080AD45 /* PlayersViewController.m */,
-				AA23FB3518759C4900241E2F /* NewsViewController.h */,
-				AA23FB3618759C4900241E2F /* NewsViewController.m */,
+				6039072C1889EB540080AD45 /* News */,
+				6039072D1889EB5D0080AD45 /* Games */,
+				6039072E1889EB6F0080AD45 /* Players */,
+				6039072F1889EB830080AD45 /* Groups */,
+				603907301889EB900080AD45 /* Companies */,
 				AA085F801887D96900F300EC /* NSString+StripHTMLwithRegEX.h */,
 				AA085F811887D96900F300EC /* NSString+StripHTMLwithRegEX.m */,
 				AAE728C41873091F0038220C /* Images.xcassets */,
 				AAE728B01873091F0038220C /* Supporting Files */,
+				60390734188D14170080AD45 /* UITabBarController+ShowHideBar.h */,
+				60390735188D14170080AD45 /* UITabBarController+ShowHideBar.m */,
 			);
 			path = JSONtestApp;
 			sourceTree = "<group>";
@@ -317,11 +387,17 @@
 			files = (
 				AA23FB3718759C4900241E2F /* NewsViewController.m in Sources */,
 				AAE728BA1873091F0038220C /* AppDelegate.m in Sources */,
+				60390736188D14170080AD45 /* UITabBarController+ShowHideBar.m in Sources */,
 				AAE728B61873091F0038220C /* main.m in Sources */,
+				603907331889EBB80080AD45 /* NewsDetailedViewController.m in Sources */,
+				6039073C188D32B90080AD45 /* PlayersDetailedViewController.m in Sources */,
 				AA085F821887D96900F300EC /* NSString+StripHTMLwithRegEX.m in Sources */,
 				6039072B18896DF80080AD45 /* GroupsViewController.m in Sources */,
+				60390742188D38A40080AD45 /* CompaniesDetailedViewController.m in Sources */,
 				6039072818895F460080AD45 /* CompaniesViewController.m in Sources */,
 				6039072518895A030080AD45 /* GamesViewController.m in Sources */,
+				60390739188D23710080AD45 /* GamesDetailedViewController.m in Sources */,
+				6039073F188D38810080AD45 /* GroupsDetailedViewController.m in Sources */,
 				60390722188955530080AD45 /* PlayersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *GamesTableView;
 @property (strong,nonatomic) NSArray *gamesJsonWrapper;
 @property (strong,nonatomic) NSArray *gamesTableArray;
-
+@property (weak, nonatomic)NSString *gameDescription;
+@property (weak, nonatomic)NSString *gameName;
 
 @end

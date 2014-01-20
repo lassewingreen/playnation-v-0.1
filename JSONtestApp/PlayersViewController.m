@@ -30,7 +30,7 @@
 - (void)viewDidLoad
     {
         [super viewDidLoad];
-        self.title = @"Player";
+        self.title = @"Players";
         
         
         //  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -168,16 +168,26 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showPlayersDetail"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PlayersViewController *playerDestViewController = segue.destinationViewController;
+        playerDestViewController.playerFirstName = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"FirstName"];
+        playerDestViewController.playerLastName = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"LastName"];
+        playerDestViewController.playerNick = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"NickName"];
+        playerDestViewController.playerAge = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"DateOfBirth"];
+        playerDestViewController.playerCity = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"City"];
+        playerDestViewController.playerCountry = [[playerTableArray objectAtIndex:indexPath.row] objectForKey:@"Country"];
+        
+    }
 }
 
- */
+
 
 @end
